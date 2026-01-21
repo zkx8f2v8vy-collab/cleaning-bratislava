@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upratovanie bytov v Bratislave | Rýchla ponuka do 10 minút</title>
-<meta name="description" content="Profesionálne upratovanie bytov v Bratislave. Overené firmy, rýchla reakcia, nezáväzná cenová ponuka do 10 minút.">
+<title>Upratovanie bytov v Bratislave | Cenová ponuka do 10 minút</title>
+<meta name="description" content="Upratovanie bytov v Bratislave. Profesionálne upratovanie 1–3 izbových bytov. Odpoveď do 10 minút, bez viazanosti.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -38,21 +38,22 @@ body{
   padding:20px;
 }
 .hero-box{
-  max-width:880px;
+  max-width:920px;
   background:#fff;
-  border-radius:22px;
-  padding:36px;
+  border-radius:24px;
+  padding:40px;
   box-shadow:0 30px 80px rgba(0,0,0,.25);
   display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:28px;
+  grid-template-columns:1.3fr 1fr;
+  gap:30px;
 }
 .hero h1{
-  font-size:38px;
-  line-height:1.2;
-  margin-bottom:12px;
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:10px;
 }
-.hero p{
+.hero .subtitle{
+  font-size:18px;
   color:var(--gray);
   margin-bottom:18px;
 }
@@ -72,16 +73,16 @@ body{
 /* FORM */
 .form{
   background:var(--bg);
-  padding:22px;
+  padding:24px;
   border-radius:18px;
 }
 .form h3{
-  margin-bottom:12px;
+  margin-bottom:14px;
   font-size:18px;
 }
 .form input,.form button{
   width:100%;
-  padding:14px;
+  padding:15px;
   margin-bottom:12px;
   border-radius:12px;
   border:1px solid #e2e8f0;
@@ -94,11 +95,20 @@ body{
   font-weight:700;
   cursor:pointer;
 }
-.form small{
-  display:block;
-  text-align:center;
-  font-size:12px;
+.form .micro{
+  font-size:13px;
   color:var(--gray);
+  text-align:center;
+}
+
+/* SEO BLOCK */
+.seo{
+  max-width:900px;
+  margin:60px auto 0;
+  padding:0 20px;
+  color:var(--gray);
+  text-align:center;
+  font-size:15px;
 }
 
 /* TRUST */
@@ -121,19 +131,6 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* CONTENT */
-.section h2{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:30px;
-}
-.text{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
-  color:var(--gray);
-}
-
 /* CTA */
 .cta{
   background:linear-gradient(135deg,var(--blue),#0d47a1);
@@ -141,7 +138,8 @@ body{
   text-align:center;
   padding:70px 20px;
 }
-.cta h2{font-size:34px;margin-bottom:14px}
+.cta h2{font-size:34px;margin-bottom:10px}
+.cta p{opacity:.9}
 .cta a{
   background:var(--green);
   padding:16px 34px;
@@ -176,10 +174,16 @@ footer{
   <div class="hero-box">
     <div>
       <h1>Upratovanie bytov v Bratislave</h1>
-      <p>Profesionálne upratovanie bytov v Bratislave a okolí. Vyberáme overené upratovacie firmy a ozveme sa vám do 10 minút.</p>
+      <p class="subtitle">
+        Cenová ponuka do 10 minút • Bez viazanosti
+      </p>
+      <p>
+        Zabezpečujeme profesionálne upratovanie bytov v Bratislave a okolí.
+        Vyberáme overené upratovacie firmy a ozveme sa vám do 10 minút.
+      </p>
       <div class="badges">
         <span class="badge">⭐ Overené firmy</span>
-        <span class="badge">⏱ Rýchla reakcia</span>
+        <span class="badge">⏱ Odpoveď do 10 minút</span>
         <span class="badge">📍 Bratislava</span>
         <span class="badge">💶 Bez skrytých poplatkov</span>
       </div>
@@ -189,33 +193,30 @@ footer{
       <h3>Získať nezáväznú ponuku</h3>
       <input type="tel" placeholder="Telefónne číslo" required>
       <button>Chcem cenu do 10 minút</button>
-      <small>🔒 Vaše údaje sú v bezpečí</small>
+      <div class="micro">📞 Zavoláme do 10 minút<br>🔒 Bez spamu</div>
     </form>
   </div>
 </section>
+
+<!-- SEO -->
+<div class="seo">
+  Upratovanie bytov v Bratislave poskytujeme pre 1-izbové, 2-izbové aj väčšie byty.
+  Pôsobíme v lokalitách Bratislava – Petržalka, Ružinov, Nové Mesto a okolie.
+</div>
 
 <!-- TRUST -->
 <section class="section">
   <div class="trust">
     <div>🧼 Profesionálne upratovanie bytov</div>
-    <div>⚡ Odpoveď do 10 minút</div>
+    <div>⚡ Rýchla reakcia bez čakania</div>
     <div>🏠 Byty všetkých veľkostí</div>
     <div>📍 Bratislava a okolie</div>
   </div>
 </section>
 
-<!-- TEXT -->
-<section class="section">
-  <h2>Prečo upratovanie bytov práve u nás?</h2>
-  <p class="text">
-    Poskytujeme profesionálne upratovanie bytov v Bratislave prostredníctvom overených upratovacích firiem.
-    Bez viazanosti, bez skrytých poplatkov a s rýchlou reakciou.
-  </p>
-</section>
-
 <!-- CTA -->
 <section class="cta">
-  <h2>Nezáväzná cenová ponuka zdarma</h2>
+  <h2>Nezáväzná cenová ponuka na upratovanie bytu</h2>
   <p>Ozveme sa vám do 10 minút</p>
   <a href="#">Získať ponuku</a>
 </section>
