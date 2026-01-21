@@ -1,167 +1,162 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upratovanie bytov v Bratislave | SlovakClean</title>
-  <meta name="description" content="Profesionálne upratovanie bytov v Bratislave. Zistite cenu za 30 sekúnd. Odpovieme v Telegrame do 10 minút." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlovakClean – Upratovanie bytov v Bratislave</title>
 
-  <style>
-    :root {
-      --primary: #2ee6d6;
-      --secondary: #1fc9b8;
-      --dark: #0f172a;
-      --light: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    body {
-      background: #f8fafc;
-      color: var(--dark);
-    }
-
-    header {
-      position: relative;
-      min-height: 100vh;
-      background: linear-gradient(
-          rgba(15, 23, 42, 0.6),
-          rgba(15, 23, 42, 0.6)
-        ),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
-          center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .hero {
-      background: var(--light);
-      max-width: 560px;
-      width: 100%;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .hero p.subtitle {
-      font-size: 16px;
-      color: #475569;
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-
-    .trust {
-      text-align: left;
-      margin-bottom: 22px;
-      font-size: 14px;
-      color: #334155;
-    }
-
-    .trust div {
-      margin-bottom: 6px;
-    }
-
-    .cta {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--dark);
-      background: var(--primary);
-      transition: 0.2s;
-    }
-
-    .cta.secondary {
-      background: #e2fdfb;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      background: var(--secondary);
-    }
-
-    .micro {
-      font-size: 13px;
-      color: #64748b;
-      margin-top: 10px;
-    }
-
-    /* FIXED TELEGRAM BUTTON */
-    .fixed-telegram {
-      position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary);
-      color: var(--dark);
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      z-index: 999;
-    }
-
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
+<style>
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --primary:#2ee6d6;
+}
+body.dark{
+  --bg:#020617;
+  --card:#020617;
+  --text:#e5e7eb;
+}
+*{box-sizing:border-box;font-family:system-ui,sans-serif}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+body.dark header{background:rgba(2,6,23,.9)}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  font-size:18px;
+}
+.logo img{width:28px;height:28px}
+.controls button{
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-top:64px;
+}
+.card{
+  background:var(--card);
+  padding:32px;
+  border-radius:22px;
+  max-width:520px;
+  width:90%;
+  text-align:center;
+  box-shadow:0 40px 100px rgba(0,0,0,.35);
+}
+.btn{
+  display:block;
+  margin:12px 0;
+  padding:14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+}
+.telegram{background:#2ee6d6;color:#000}
+.whatsapp{background:#25D366;color:#000}
+.fixed-whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+}
+small{opacity:.7}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="hero">
-    <h1>Upratovanie bytov v Bratislave</h1>
-
-    <p class="subtitle">
-      Zistite cenu upratovania za 30 sekúnd.<br />
-      Odpovieme vám v Telegrame do 10 minút.
-    </p>
-
-    <div class="trust">
-      <div>⭐ 4.8 / 5 hodnotenie</div>
-      <div>🏠 Byty a domy všetkých veľkostí</div>
-      <div>📍 Bratislava a okolie</div>
-      <div>💬 Komunikácia v ruštine alebo angličtine</div>
-    </div>
-
-    <a class="cta" href="https://t.me/SlovakClean?text=Dobrý%20deň,%20chcem%20zistiť%20cenu%20upratovania%20v%20Bratislave." target="_blank">
-      💬 Napísať do Telegramu (zistiť cenu)
-    </a>
-
-    <a class="cta secondary" href="https://t.me/SlovakClean?text=Dobrý%20deň,%20chcem%20zistiť%20cenu%20upratovania%20v%20Bratislave." target="_blank">
-      ⚡ Bezplatný výpočet ceny
-    </a>
-
-    <div class="micro">
-      ⏱ Odpovedáme do 10 minút • Bez telefonátov • Bez formulárov
-    </div>
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/994/994928.png">
+    SlovakClean
+  </div>
+  <div class="controls">
+    <button onclick="toggleLang()">SK / RU</button>
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
   </div>
 </header>
 
-<a class="fixed-telegram" href="https://t.me/SlovakClean?text=Dobrý%20deň,%20chcem%20zistiť%20cenu%20upratovania%20v%20Bratislave." target="_blank">
-  💬 Napísať do Telegramu
+<section class="hero">
+  <div class="card" id="content">
+    <h1>Upratovanie bytov v Bratislave</h1>
+    <p>Zistite cenu za 30 sekúnd. Odpovieme v messengeroch do 10 minút.</p>
+
+    <a class="btn telegram" href="https://t.me/SlovakClean" target="_blank">
+      💬 Napísať do Telegramu
+    </a>
+
+    <a class="btn whatsapp" href="https://wa.me/421952310500" target="_blank">
+      🟢 Napísať na WhatsApp
+    </a>
+
+    <small>Bez telefonátov • Bez formulárov</small>
+  </div>
+</section>
+
+<a class="btn whatsapp fixed-whatsapp"
+   href="https://wa.me/421952310500"
+   target="_blank">
+   🟢 Napísať na WhatsApp
 </a>
+
+<script>
+let ru=false;
+function toggleLang(){
+  ru=!ru;
+  document.getElementById("content").innerHTML = ru ? `
+    <h1>Уборка квартир в Братиславе</h1>
+    <p>Узнайте цену за 30 секунд. Ответим в мессенджерах до 10 минут.</p>
+    <a class="btn telegram" href="https://t.me/SlovakClean" target="_blank">
+      💬 Написать в Telegram
+    </a>
+    <a class="btn whatsapp" href="https://wa.me/421952310500" target="_blank">
+      🟢 Написать в WhatsApp
+    </a>
+    <small>Без звонков • Без форм</small>
+  ` : `
+    <h1>Upratovanie bytov v Bratislave</h1>
+    <p>Zistite cenu za 30 sekúnd. Odpovieme v messengeroch do 10 minút.</p>
+    <a class="btn telegram" href="https://t.me/SlovakClean" target="_blank">
+      💬 Napísať do Telegramu
+    </a>
+    <a class="btn whatsapp" href="https://wa.me/421952310500" target="_blank">
+      🟢 Napísať na WhatsApp
+    </a>
+    <small>Bez telefonátov • Bez formulárov</small>
+  `;
+}
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
