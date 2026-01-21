@@ -189,12 +189,25 @@ footer{
       </div>
     </div>
 
-    <form class="form">
-      <h3>Získať nezáväznú ponuku</h3>
-      <input type="tel" placeholder="Telefónne číslo" required>
-      <button>Chcem cenu do 10 minút</button>
-      <div class="micro">📞 Zavoláme do 10 minút<br>🔒 Bez spamu</div>
-    </form>
+    <form class="form" id="leadForm">
+  <h3>Získať nezáväznú ponuku</h3>
+
+  <input 
+    type="tel" 
+    id="phone" 
+    placeholder="Telefónne číslo" 
+    required
+  >
+
+  <button type="submit">Chcem cenu do 10 minút</button>
+
+  <div class="micro">
+    📞 Zavoláme do 10 minút<br>
+    🔒 Bez spamu
+  </div>
+
+  <div id="formStatus" class="micro"></div>
+</form>
   </div>
 </section>
 
@@ -224,6 +237,51 @@ footer{
 <footer>
   © 2026 Upratovanie bytov Bratislava
 </footer>
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const phone = document.getElementById("phone").value.trim();
+  const status = document.getElementById("formStatus");
+
+  if (!phone) {
+    status.textContent = "Zadajte telefónne číslo";
+    return;
+  }
+
+  status.textContent = "Odosielame…";
+
+  const token = "8208665881:AAHdlF92x0L5h8109Xm_NcCEx5G6dZ42PUE";
+  const chatId = "8244154828";
+
+  const message = `
+📩 Nová žiadosť
+📞 Telefón: ${phone}
+🌍 Stránka: Upratovanie bytov Bratislava
+⏱ Čas: ${new Date().toLocaleString()}
+`;
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message
+    })
+  })
+  .then(res => {
+    if (res.ok) {
+      status.textContent = "✅ Žiadosť odoslaná. Ozveme sa vám čoskoro.";
+      document.getElementById("leadForm").reset();
+    } else {
+      status.textContent = "❌ Chyba pri odosielaní. Skúste znova.";
+    }
+  })
+  .catch(() => {
+    status.textContent = "❌ Chyba spojenia. Skúste znova.";
+  });
+});
+</script>
 
 </body>
 </html>
