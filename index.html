@@ -1,168 +1,300 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upratovacie služby v Bratislave | Nezáväzná ponuka</title>
-<meta name="description" content="Upratovanie bytov, domov a kancelárií v Bratislave. Overené upratovacie firmy. Nezáväzná cenová ponuka do 10 minút.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profesionálne upratovanie v Bratislave | Rýchla ponuka</title>
+  <meta name="description" content="Profesionálne upratovacie služby v Bratislave. Byty, domy, kancelárie, po-stavebné upratovanie. Kontakt do 10 minút." />
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    color: #333;
-}
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-.hero {
-    background: #0a7cff;
-    color: white;
-    padding: 50px 20px;
-}
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-.hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-.form-box {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    max-width: 400px;
-}
-input, select, button {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-button {
-    background: #0a7cff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background: #055ec4;
-}
-.section {
-    padding: 50px 20px;
-    background: white;
-    margin-bottom: 10px;
-}
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.feature {
-    background: #f1f1f1;
-    padding: 20px;
-    border-radius: 6px;
-}
-.footer {
-    background: #222;
-    color: #bbb;
-    font-size: 14px;
-    padding: 30px 20px;
-}
-.footer a {
-    color: #bbb;
-    text-decoration: underline;
-}
-@media(max-width:768px) {
-    .hero h1 { font-size: 28px; }
-}
-</style>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e88e5;
+      --accent: #22c55e;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(15,23,42,.6), rgba(15,23,42,.6)),
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-box {
+      max-width: 700px;
+      background: rgba(255,255,255,.95);
+      color: var(--dark);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .form input,
+    .form select,
+    .form button {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      font-size: 15px;
+    }
+
+    .form button {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .form button:hover {
+      background: #1565c0;
+    }
+
+    /* TRUST */
+    .trust {
+      background: #fff;
+      padding: 50px 20px;
+    }
+
+    .trust-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .trust-item {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 14px;
+      font-weight: 600;
+    }
+
+    /* SERVICES */
+    .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card div {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* STEPS */
+    .steps {
+      background: #fff;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      text-align: center;
+    }
+
+    .step {
+      padding: 30px;
+      border-radius: 16px;
+      background: var(--bg);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), #0d47a1);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      margin-bottom: 24px;
+    }
+
+    .cta a {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="container">
-    <h1>Upratovacie služby v Bratislave</h1>
-    <p>Overené upratovacie firmy • Rýchla reakcia • Nezáväzne</p>
-
-    <div class="form-box">
-      <form>
-        <input type="tel" placeholder="Telefónne číslo" required>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Profesionálne upratovanie v Bratislave</h1>
+      <p>Rýchla reakcia • Overené firmy • Bez skrytých poplatkov</p>
+      <form class="form">
+        <input type="tel" placeholder="Telefónne číslo" required />
         <select required>
           <option value="">Vyberte službu</option>
-          <option>Upratovanie bytu / domu</option>
+          <option>Upratovanie bytu alebo domu</option>
           <option>Upratovanie kancelárie</option>
           <option>Po-stavebné upratovanie</option>
           <option>Čistenie kobercov a sedačiek</option>
         </select>
         <button type="submit">Získať ponuku do 10 minút</button>
-        <small>Odoslaním súhlasíte s GDPR</small>
       </form>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- WHY US -->
-<div class="section">
-  <div class="container">
-    <h2>Prečo využiť náš servis?</h2>
-    <div class="features">
-      <div class="feature">✔️ Lokálni partneri v Bratislave</div>
-      <div class="feature">✔️ Kontakt do 10 minút</div>
-      <div class="feature">✔️ Overené upratovacie firmy</div>
-      <div class="feature">✔️ Bez poplatku pre zákazníka</div>
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="trust-grid">
+      <div class="trust-item">⭐ 150+ spokojných klientov</div>
+      <div class="trust-item">⏱ Kontakt do 10 minút</div>
+      <div class="trust-item">🧼 Overené upratovacie firmy</div>
+      <div class="trust-item">📍 Bratislava a okolie</div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- SERVICES -->
-<div class="section">
-  <div class="container">
+  <!-- SERVICES -->
+  <section class="section">
     <h2>Naše služby</h2>
-    <p><strong>Upratovanie bytov a domov</strong> – jednorazové aj pravidelné upratovanie.</p>
-    <p><strong>Upratovanie kancelárií</strong> – flexibilné časy, spoľahlivé firmy.</p>
-    <p><strong>Po-stavebné upratovanie</strong> – po rekonštrukciách a stavbách.</p>
-    <p><strong>Čistenie kobercov a sedačiek</strong> – hĺbkové čistenie.</p>
-  </div>
-</div>
+    <div class="services">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>Upratovanie bytov a domov</h3>
+          <p>Jednorazové aj pravidelné upratovanie.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1596079890744-c1a0462d0975?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>Upratovanie kancelárií</h3>
+          <p>Flexibilné časy, spoľahlivé tímy.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>Po-stavebné upratovanie</h3>
+          <p>Po rekonštrukciách a stavbách.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?auto=format&fit=crop&w=800&q=80">
+        <div>
+          <h3>Čistenie kobercov a sedačiek</h3>
+          <p>Hĺbkové čistenie s technikou.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- HOW IT WORKS -->
-<div class="section">
-  <div class="container">
+  <!-- STEPS -->
+  <section class="section steps">
     <h2>Ako to funguje?</h2>
-    <p>1️⃣ Vyplníte formulár</p>
-    <p>2️⃣ Dopyt odovzdáme partnerskej firme</p>
-    <p>3️⃣ Firma vás kontaktuje s ponukou</p>
-    <p>4️⃣ Rozhodnutie je len na vás</p>
-  </div>
-</div>
+    <div class="steps-grid">
+      <div class="step">1️⃣ Zanecháte kontakt</div>
+      <div class="step">2️⃣ Vyberieme overenú firmu</div>
+      <div class="step">3️⃣ Upratovanie bez starostí</div>
+    </div>
+  </section>
 
-<!-- CTA -->
-<div class="section">
-  <div class="container">
-    <h2>Získajte ponuku ešte dnes</h2>
-    <p>Nezáväzná cenová ponuka • Odpoveď do 10 minút</p>
-  </div>
-</div>
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Nezáväzná ponuka zdarma</h2>
+    <p>Ozveme sa vám do 10 minút</p>
+    <a href="#">Získať ponuku</a>
+  </section>
 
-<!-- FOOTER -->
-<div class="footer">
-  <div class="container">
-    <p>Odoslaním formulára súhlasíte s odovzdaním údajov partnerskej upratovacej firme v súlade s GDPR.</p>
-    <p><a href="#">Ochrana osobných údajov</a></p>
-    <p>© 2026 Upratovacie služby Bratislava</p>
-  </div>
-</div>
+  <footer>
+    © 2026 Upratovacie služby Bratislava
+  </footer>
 
 </body>
 </html>
