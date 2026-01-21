@@ -4,283 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Upratovanie bytov v Bratislave | Cenová ponuka do 10 minút</title>
-<meta name="description" content="Upratovanie bytov v Bratislave. Profesionálne upratovanie 1–3 izbových bytov. Odpoveď do 10 minút, bez viazanosti.">
+<title>Upratovanie bytov v Bratislave – Cena do 10 minút</title>
+<meta name="description" content="Profesionálne upratovanie bytov v Bratislave. Ozveme sa vám do 10 minút. Férové ceny, overené firmy, bez viazanosti.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --blue:#1e88e5;
   --green:#22c55e;
-  --dark:#0f172a;
-  --gray:#64748b;
+  --dark:#1f2937;
   --bg:#f8fafc;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:'Inter',sans-serif;
+  font-family:Poppins,sans-serif;
   background:var(--bg);
   color:var(--dark);
-  line-height:1.6;
 }
 
 /* HERO */
 .hero{
-  min-height:100vh;
+  min-height:90vh;
   background:
     linear-gradient(rgba(15,23,42,.65),rgba(15,23,42,.65)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
-    center/cover no-repeat;
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:20px;
 }
 .hero-box{
-  max-width:920px;
   background:#fff;
+  max-width:920px;
+  width:100%;
   border-radius:24px;
   padding:40px;
-  box-shadow:0 30px 80px rgba(0,0,0,.25);
   display:grid;
-  grid-template-columns:1.3fr 1fr;
+  grid-template-columns:1.2fr 1fr;
   gap:30px;
 }
-.hero h1{
-  font-size:40px;
-  line-height:1.15;
-  margin-bottom:10px;
-}
-.hero .subtitle{
-  font-size:18px;
-  color:var(--gray);
-  margin-bottom:18px;
-}
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-.badge{
-  background:var(--bg);
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:600;
-}
+
+/* TEXT */
+.hero h1{font-size:34px;line-height:1.2}
+.hero p{margin-top:10px;color:#475569}
+.badges{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+.badges span{background:#f1f5f9;padding:8px 14px;border-radius:999px}
 
 /* FORM */
-.form{
-  background:var(--bg);
-  padding:24px;
-  border-radius:18px;
-}
-.form h3{
-  margin-bottom:14px;
-  font-size:18px;
-}
-.form input,.form button{
+.form h3{margin-bottom:10px}
+input,button{
   width:100%;
-  padding:15px;
-  margin-bottom:12px;
-  border-radius:12px;
-  border:1px solid #e2e8f0;
-  font-size:15px;
+  padding:14px;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
 }
-.form button{
-  background:linear-gradient(135deg,var(--blue),#0d47a1);
+button{
+  background:var(--blue);
   color:#fff;
   border:none;
-  font-weight:700;
+  font-weight:600;
   cursor:pointer;
+  margin-top:10px;
 }
-.form .micro{
-  font-size:13px;
-  color:var(--gray);
+.small{font-size:13px;color:#64748b;margin-top:8px}
+
+/* CHAT BUTTONS */
+.chat-buttons{
+  margin-top:14px;
+  display:grid;
+  gap:10px;
+}
+.chat-buttons a{
+  display:block;
   text-align:center;
+  padding:13px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+.telegram{
+  background:#229ED9;
+  color:#fff;
+}
+.whatsapp{
+  background:#25D366;
+  color:#fff;
 }
 
-/* SEO BLOCK */
-.seo{
-  max-width:900px;
-  margin:60px auto 0;
-  padding:0 20px;
-  color:var(--gray);
-  text-align:center;
-  font-size:15px;
-}
-
-/* TRUST */
+/* SECTIONS */
 .section{
+  padding:70px 20px;
   max-width:1100px;
   margin:auto;
-  padding:70px 20px;
+  text-align:center;
 }
-.trust{
+.features{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
+  margin-top:30px;
 }
-.trust div{
-  background:#fff;
-  padding:26px;
-  border-radius:18px;
-  text-align:center;
-  font-weight:600;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+.feature{background:#fff;padding:25px;border-radius:16px}
 
 /* CTA */
 .cta{
-  background:linear-gradient(135deg,var(--blue),#0d47a1);
+  background:linear-gradient(90deg,#38bdf8,#1e88e5);
   color:#fff;
-  text-align:center;
   padding:70px 20px;
-}
-.cta h2{font-size:34px;margin-bottom:10px}
-.cta p{opacity:.9}
-.cta a{
-  background:var(--green);
-  padding:16px 34px;
-  border-radius:999px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  display:inline-block;
-  margin-top:20px;
+  text-align:center;
 }
 
 /* FOOTER */
 footer{
-  text-align:center;
   padding:30px;
+  text-align:center;
   font-size:14px;
-  color:var(--gray);
+  color:#64748b;
 }
 
 /* MOBILE */
 @media(max-width:900px){
   .hero-box{grid-template-columns:1fr}
-  .hero h1{font-size:30px}
+  h1{font-size:28px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-box">
     <div>
       <h1>Upratovanie bytov v Bratislave</h1>
-      <p class="subtitle">
-        Cenová ponuka do 10 minút • Bez viazanosti
-      </p>
-      <p>
-        Zabezpečujeme profesionálne upratovanie bytov v Bratislave a okolí.
-        Vyberáme overené upratovacie firmy a ozveme sa vám do 10 minút.
-      </p>
+      <p>Zistite cenu upratovania za 30 sekúnd. Ozveme sa vám do 10 minút.</p>
+
       <div class="badges">
-        <span class="badge">⭐ Overené firmy</span>
-        <span class="badge">⏱ Odpoveď do 10 minút</span>
-        <span class="badge">📍 Bratislava</span>
-        <span class="badge">💶 Bez skrytých poplatkov</span>
+        <span>⭐ 4.8 / 5 hodnotenie</span>
+        <span>👥 1 200+ objednávok</span>
+        <span>✅ Overené firmy</span>
+        <span>📍 Bratislava a okolie</span>
       </div>
     </div>
 
-    <form class="form" id="leadForm">
-  <h3>Získať nezáväznú ponuku</h3>
+    <div class="form">
+      <h3>Zistiť cenu upratovania</h3>
 
-  <input 
-    type="tel" 
-    id="phone" 
-    placeholder="Telefónne číslo" 
-    required
-  >
+      <input id="phone" type="tel" placeholder="Telefónne číslo" required>
 
-  <button type="submit">Chcem cenu do 10 minút</button>
+      <button id="submitBtn" onclick="sendForm()">Zistiť cenu teraz</button>
 
-  <div class="micro">
-    📞 Zavoláme do 10 minút<br>
-    🔒 Bez spamu
-  </div>
+      <div class="small">🔒 Bez spamu • Ozveme sa vám správou</div>
 
-  <div id="formStatus" class="micro"></div>
-</form>
+      <div class="chat-buttons">
+        <a class="telegram" href="https://t.me/SlovakClean" target="_blank">
+          💬 Napísať v Telegrame – SlovakClean
+        </a>
+        <a class="whatsapp" href="https://wa.me/421952310500" target="_blank">
+          💬 Napísať na WhatsApp
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SEO -->
-<div class="seo">
-  Upratovanie bytov v Bratislave poskytujeme pre 1-izbové, 2-izbové aj väčšie byty.
-  Pôsobíme v lokalitách Bratislava – Petržalka, Ružinov, Nové Mesto a okolie.
-</div>
-
-<!-- TRUST -->
 <section class="section">
-  <div class="trust">
-    <div>🧼 Profesionálne upratovanie bytov</div>
-    <div>⚡ Rýchla reakcia bez čakania</div>
-    <div>🏠 Byty všetkých veľkostí</div>
-    <div>📍 Bratislava a okolie</div>
+  <h2>Prečo si vybrať nás?</h2>
+  <div class="features">
+    <div class="feature">🧼 Profesionálne upratovanie bytov</div>
+    <div class="feature">⚡ Rýchla reakcia bez čakania</div>
+    <div class="feature">🏠 Byty všetkých veľkostí</div>
+    <div class="feature">💶 Bez skrytých poplatkov</div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
-  <h2>Nezáväzná cenová ponuka na upratovanie bytu</h2>
-  <p>Ozveme sa vám do 10 minút</p>
-  <a href="#">Získať ponuku</a>
+  <h2>Nezáväzná cenová ponuka zdarma</h2>
+  <p>Napíšte nám – odpovieme rýchlo</p>
 </section>
 
 <footer>
-  © 2026 Upratovanie bytov Bratislava
+© 2026 Upratovanie bytov Bratislava
 </footer>
+
 <script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// =====================
+// A/B TEST BUTTON TEXT
+// =====================
+const buttonVariants = [
+  "Zistiť cenu teraz",
+  "Získať cenu do 10 minút",
+  "Nezáväzná cenová ponuka"
+];
 
-  const phone = document.getElementById("phone").value.trim();
-  const status = document.getElementById("formStatus");
+const chosenVariant =
+  buttonVariants[Math.floor(Math.random() * buttonVariants.length)];
 
-  if (!phone) {
-    status.textContent = "Zadajte telefónne číslo";
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("submitBtn");
+  if (btn) btn.textContent = chosenVariant;
+});
+
+// =====================
+// SEND FORM TO TELEGRAM
+// =====================
+function sendForm(){
+  const phone=document.getElementById("phone").value.trim();
+  if(!phone){
+    alert("Zadajte telefónne číslo");
     return;
   }
 
-  status.textContent = "Odosielame…";
+  const token="8208665881:AAHdlF92x0L5h8109Xm_NcCEx5G6dZ42PUE";
+  const chatId="8244154828";
 
-  const token = "8208665881:AAHdlF92x0L5h8109Xm_NcCEx5G6dZ42PUE";
-  const chatId = "8244154828";
-
-  const message = `
-📩 Nová žiadosť
+  const text=
+`📩 Nová žiadosť
 📞 Telefón: ${phone}
-🌍 Stránka: Upratovanie bytov Bratislava
-⏱ Čas: ${new Date().toLocaleString()}
-`;
+🧪 Tlačidlo: ${chosenVariant}
+💬 Preferovaný kontakt: správa
+🌍 Upratovanie bytov Bratislava`;
 
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message
-    })
-  })
-  .then(res => {
-    if (res.ok) {
-      status.textContent = "✅ Žiadosť odoslaná. Ozveme sa vám čoskoro.";
-      document.getElementById("leadForm").reset();
-    } else {
-      status.textContent = "❌ Chyba pri odosielaní. Skúste znova.";
-    }
-  })
-  .catch(() => {
-    status.textContent = "❌ Chyba spojenia. Skúste znova.";
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({chat_id:chatId,text})
+  }).then(()=>{
+    alert("Ďakujeme! Ozveme sa vám správou.");
+    document.getElementById("phone").value="";
   });
-});
+}
 </script>
 
 </body>
