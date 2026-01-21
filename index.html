@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Upratovanie bytov v Bratislave | SlovakClean</title>
-<meta name="description" content="Profesionálne upratovanie bytov v Bratislave. Nezáväzná cenová ponuka do 10 minút. Telegram & WhatsApp.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SlovakClean – Upratovanie bytov v Bratislave</title>
+<meta name="description" content="Profesionálne upratovanie bytov v Bratislave. Získajte cenovú ponuku do 10 minút. Telegram a WhatsApp.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -30,13 +31,15 @@ body{
   background:var(--bg);
   color:var(--text);
 }
+
+/* HEADER */
 header{
   position:fixed;
-  top:0; left:0; right:0;
+  top:0;left:0;right:0;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 24px;
+  padding:12px 22px;
   background:rgba(255,255,255,.9);
   backdrop-filter:blur(8px);
   z-index:10;
@@ -47,9 +50,12 @@ body.dark header{background:rgba(15,23,42,.9)}
   align-items:center;
   gap:10px;
   font-weight:700;
+  font-size:20px;
 }
 .logo img{
-  width:28px;height:28px;border-radius:6px;
+  width:30px;
+  height:30px;
+  border-radius:6px;
 }
 .controls button{
   margin-left:10px;
@@ -60,13 +66,13 @@ body.dark header{background:rgba(15,23,42,.9)}
   color:var(--text);
 }
 
+/* HERO */
 .hero{
   min-height:100vh;
   background:
     linear-gradient(rgba(15,23,42,.55),rgba(15,23,42,.55)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -82,12 +88,15 @@ body.dark header{background:rgba(15,23,42,.9)}
 }
 h1{margin-top:0;font-size:34px}
 p{color:var(--muted)}
+
 .badges{
-  display:flex;flex-wrap:wrap;gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
   margin:18px 0;
   font-size:14px;
 }
-.badges span{display:flex;gap:6px;align-items:center}
+
 .buttons{
   margin-top:24px;
   display:grid;
@@ -103,8 +112,9 @@ p{color:var(--muted)}
 }
 .btn.tg{background:var(--blue)}
 .btn.wa{background:var(--green)}
+
 .note{
-  margin-top:10px;
+  margin-top:12px;
   font-size:13px;
   color:var(--muted);
   text-align:center;
@@ -116,6 +126,7 @@ footer{
   color:var(--muted);
   font-size:14px;
 }
+
 @media(max-width:600px){
   h1{font-size:26px}
   .card{padding:24px}
@@ -127,7 +138,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="https://images.unsplash.com/photo-1581579185169-1c9b3b6d2c65?auto=format&fit=crop&w=80&q=80">
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="logo">
     SlovakClean
   </div>
   <div class="controls">
@@ -136,46 +147,54 @@ footer{
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-box">
-    <h1>Upratovanie bytov v Bratislave</h1>
-    <p class="subtitle">
-      Zistite cenu upratovania za <b>30 sekúnd</b>.  
-      Odpovieme do <b>10 minút</b>. Bez hovoru.
+  <div class="card">
+    <h1 data-sk="Upratovanie bytov v Bratislave"
+        data-ru="Уборка квартир в Братиславе">
+        Upratovanie bytov v Bratislave
+    </h1>
+
+    <p data-sk="Zistite cenu upratovania za 30 sekúnd. Odpovieme do 10 minút."
+       data-ru="Узнайте цену уборки за 30 секунд. Ответим в течение 10 минут.">
+       Zistite cenu upratovania za 30 sekúnd. Odpovieme do 10 minút.
     </p>
 
-    <div class="trust">
-      ⭐ 4.8 / 5 hodnotenie &nbsp; • &nbsp;
-      ✔ Overené firmy &nbsp; • &nbsp;
-      📍 Bratislava a okolie
+    <div class="badges">
+      <span>⭐ 4.8 / 5</span>
+      <span data-sk="Overené firmy" data-ru="Проверенные исполнители">Overené firmy</span>
+      <span data-sk="Bez skrytých poplatkov" data-ru="Без скрытых платежей">Bez skrytých poplatkov</span>
+      <span data-sk="Bratislava a okolie" data-ru="Братислава и окрестности">Bratislava a okolie</span>
     </div>
 
-    <!-- A/B buttons -->
-    <div class="actions">
-      <!-- TELEGRAM -->
-      <a class="btn btn-tg"
-         href="https://t.me/SlovakClean_bot?start=site_lead"
-         target="_blank">
-        💬 Získať cenu v Telegrame
+    <div class="buttons">
+      <a class="btn tg"
+         href="https://t.me/SlovakClean_bot?start=site"
+         target="_blank"
+         data-sk="💬 Získať cenu v Telegrame (do 10 min)"
+         data-ru="💬 Узнать цену в Telegram (до 10 мин)">
+         💬 Získať cenu v Telegrame (do 10 min)
       </a>
 
-      <!-- WHATSAPP -->
-      <a class="btn btn-wa"
+      <a class="btn wa"
          href="https://wa.me/421952310500?text=Dobrý%20deň,%20chcem%20zistiť%20cenu%20upratovania%20bytu%20v%20Bratislave."
-         target="_blank">
-        💚 Získať cenu na WhatsApp
+         target="_blank"
+         data-sk="💚 Získať cenu na WhatsApp (bez hovoru)"
+         data-ru="💚 Узнать цену в WhatsApp (без звонка)">
+         💚 Získať cenu na WhatsApp (bez hovoru)
       </a>
     </div>
 
-    <div class="micro">
-      ✅ Nezáväzne &nbsp; • &nbsp; ✅ Bez spamu &nbsp; • &nbsp; ⏱ Odpoveď do 10 minút
+    <div class="note"
+         data-sk="✅ Bez spamu • Nezáväzne • Odpoveď do 10 minút"
+         data-ru="✅ Без спама • Без обязательств • Ответ до 10 минут">
+         ✅ Bez spamu • Nezáväzne • Odpoveď do 10 minút
     </div>
   </div>
 </section>
 
-
-<footer>© 2026 SlovakClean</footer>
+<footer>
+© 2026 SlovakClean
+</footer>
 
 <script>
 let lang="sk";
