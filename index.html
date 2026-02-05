@@ -6,10 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')
+        no-repeat center center / cover;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -19,6 +24,7 @@
     body.dark { color: #fff; }
     body.light { color: #000; }
 
+    /* затемнение фона */
     .overlay {
       position: fixed;
       inset: 0;
@@ -26,71 +32,96 @@
       z-index: 0;
     }
 
+    /* верхняя панель */
     .top-bar {
       position: fixed;
       top: 20px;
-      right: 20px;
+      left: 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       z-index: 2;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-weight: bold;
       color: #fff;
+      font-size: 16px;
     }
 
-    .top-bar button {
+    .logo span {
+      font-size: 20px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .controls button {
       background: rgba(255,255,255,0.15);
       border: none;
       color: #fff;
       padding: 6px 10px;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 13px;
     }
 
+    /* форма */
     .lead-box {
       position: relative;
       z-index: 1;
-      background: #fff;
+      background: #ffffff;
       color: #000;
+      width: 100%;
       max-width: 420px;
-      width: 90%;
-      padding: 30px;
+      padding: 32px 28px;
       border-radius: 18px;
       text-align: center;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
+      box-shadow: 0 10px 40px rgba(0,0,0,.3);
+      margin: 0 auto;
     }
 
     body.dark .lead-box {
-      background: #1f2933;
+      background: #2f3e4d;
       color: #fff;
     }
 
     .lead-box h1 {
-      margin-bottom: 8px;
+      margin: 0 0 8px 0;
+      font-size: 24px;
     }
 
     .lead-box p {
+      margin: 0 0 20px 0;
       font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 20px;
+      opacity: 0.85;
     }
 
     .lead-box input,
     .lead-box textarea {
       width: 100%;
-      padding: 12px;
+      padding: 12px 14px;
       margin-bottom: 12px;
       border-radius: 8px;
       border: 1px solid #ddd;
       font-size: 15px;
+      outline: none;
     }
 
     .lead-box textarea {
       resize: none;
       height: 80px;
+    }
+
+    body.dark .lead-box input,
+    body.dark .lead-box textarea {
+      background: #ffffff;
+      color: #000;
     }
 
     .btn-main {
@@ -102,6 +133,7 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: 4px;
     }
 
     .whatsapp {
@@ -116,6 +148,7 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
   </style>
 </head>
@@ -124,12 +157,19 @@
 
 <div class="overlay"></div>
 
+<!-- верх -->
 <div class="top-bar">
-  <div class="logo">SlovakClean</div>
-  <button id="langToggle">SK / RU</button>
-  <button id="themeToggle">🌙</button>
+  <div class="logo">
+    <span>🧹</span>
+    SlovakClean
+  </div>
+  <div class="controls">
+    <button id="langToggle">SK / RU</button>
+    <button id="themeToggle">🌙</button>
+  </div>
 </div>
 
+<!-- форма -->
 <div class="lead-box">
   <h1 id="title">Upratovanie bytov v Bratislave</h1>
   <p id="subtitle">Zanechajte žiadosť – ozveme sa vám do 10 minút</p>
@@ -138,34 +178,42 @@
     <input type="text" name="name" placeholder="Vaše meno" required>
     <input type="tel" name="phone" placeholder="Telefónne číslo" required>
     <textarea name="message" placeholder="Čo potrebujete upratať?"></textarea>
-    <button type="submit" class="btn-main" id="sendBtn">Odoslať žiadosť</button>
+    <button type="submit" class="btn-main" id="sendBtn">
+      Odoslať žiadosť
+    </button>
   </form>
 
   <div class="whatsapp">
-    <a href="https://wa.me/421952310500" target="_blank">💬 Napísať na WhatsApp</a>
+    <a href="https://wa.me/421952310500" target="_blank">
+      💬 Napísať na WhatsApp
+    </a>
   </div>
 </div>
 
 <script>
-/* THEME */
+/* тема */
 document.getElementById("themeToggle").onclick = () => {
   document.body.classList.toggle("dark");
   document.body.classList.toggle("light");
 };
 
-/* LANGUAGE */
+/* язык */
 let lang = "sk";
 document.getElementById("langToggle").onclick = () => {
   lang = lang === "sk" ? "ru" : "sk";
   document.getElementById("title").innerText =
-    lang === "sk" ? "Upratovanie bytov v Bratislave" : "Уборка квартир в Братиславе";
+    lang === "sk"
+      ? "Upratovanie bytov v Bratislave"
+      : "Уборка квартир в Братиславе";
   document.getElementById("subtitle").innerText =
-    lang === "sk" ? "Zanechajte žiadosť – ozveme sa vám do 10 minút" : "Оставьте заявку — свяжемся за 10 минут";
+    lang === "sk"
+      ? "Zanechajte žiadosť – ozveme sa vám do 10 minút"
+      : "Оставьте заявку — свяжемся за 10 минут";
   document.getElementById("sendBtn").innerText =
     lang === "sk" ? "Odoslať žiadosť" : "Отправить заявку";
 };
 
-/* TELEGRAM */
+/* Telegram */
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
