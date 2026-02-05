@@ -2,7 +2,7 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8">
-  <title>Upratovanie bytov v Bratislave</title>
+  <title>SlovakClean – Upratovanie Bratislava</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -16,8 +16,45 @@
       justify-content: center;
     }
 
+    body.dark { color: #fff; }
+    body.light { color: #000; }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .top-bar button {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
     .lead-box {
-      background: #ffffff;
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      color: #000;
       max-width: 420px;
       width: 90%;
       padding: 30px;
@@ -26,14 +63,18 @@
       box-shadow: 0 10px 40px rgba(0,0,0,.25);
     }
 
+    body.dark .lead-box {
+      background: #1f2933;
+      color: #fff;
+    }
+
     .lead-box h1 {
-      margin-bottom: 10px;
-      font-size: 24px;
+      margin-bottom: 8px;
     }
 
     .lead-box p {
       font-size: 14px;
-      color: #555;
+      opacity: 0.8;
       margin-bottom: 20px;
     }
 
@@ -64,7 +105,7 @@
     }
 
     .whatsapp {
-      margin-top: 15px;
+      margin-top: 14px;
     }
 
     .whatsapp a {
@@ -72,34 +113,59 @@
       padding: 12px;
       border-radius: 8px;
       background: #25D366;
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
   </style>
 </head>
 
-<body>
+<body class="dark">
+
+<div class="overlay"></div>
+
+<div class="top-bar">
+  <div class="logo">SlovakClean</div>
+  <button id="langToggle">SK / RU</button>
+  <button id="themeToggle">🌙</button>
+</div>
 
 <div class="lead-box">
-  <h1>Upratovanie bytov v Bratislave</h1>
-  <p>Zanechajte žiadosť – ozveme sa vám do 10 minút</p>
+  <h1 id="title">Upratovanie bytov v Bratislave</h1>
+  <p id="subtitle">Zanechajte žiadosť – ozveme sa vám do 10 minút</p>
 
   <form id="leadForm">
     <input type="text" name="name" placeholder="Vaše meno" required>
     <input type="tel" name="phone" placeholder="Telefónne číslo" required>
     <textarea name="message" placeholder="Čo potrebujete upratať?"></textarea>
-    <button type="submit" class="btn-main">Odoslať žiadosť</button>
+    <button type="submit" class="btn-main" id="sendBtn">Odoslať žiadosť</button>
   </form>
 
   <div class="whatsapp">
-    <a href="https://wa.me/421952310500" target="_blank">
-      Napísať na WhatsApp
-    </a>
+    <a href="https://wa.me/421952310500" target="_blank">💬 Napísať na WhatsApp</a>
   </div>
 </div>
 
 <script>
+/* THEME */
+document.getElementById("themeToggle").onclick = () => {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+};
+
+/* LANGUAGE */
+let lang = "sk";
+document.getElementById("langToggle").onclick = () => {
+  lang = lang === "sk" ? "ru" : "sk";
+  document.getElementById("title").innerText =
+    lang === "sk" ? "Upratovanie bytov v Bratislave" : "Уборка квартир в Братиславе";
+  document.getElementById("subtitle").innerText =
+    lang === "sk" ? "Zanechajte žiadosť – ozveme sa vám do 10 minút" : "Оставьте заявку — свяжемся за 10 минут";
+  document.getElementById("sendBtn").innerText =
+    lang === "sk" ? "Odoslať žiadosť" : "Отправить заявку";
+};
+
+/* TELEGRAM */
 document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -108,18 +174,16 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
   const message = this.message.value;
 
   const text =
-`🧹 Nová žiadosť – Bratislava
-👤 Meno: ${name}
-📞 Telefón: ${phone}
-📝 Požiadavka: ${message}`;
+`🧹 Новая заявка – Bratislava
+👤 Имя: ${name}
+📞 Телефон: ${phone}
+📝 Запрос: ${message}`;
 
-  fetch("https://api.telegram.org/bot8588028264:AAGeCVR2u1xSM1BWM9PvYZEyXguOdZXau1o/sendMessage", {
-
+  fetch("https://api.telegram.org/8588028264:AAGeCVR2u1xSM1BWM9PvYZEyXguOdZXau1o/sendMessage", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       chat_id: "8244154828",
-
       text: text
     })
   }).then(() => {
